@@ -5,6 +5,7 @@ let resetBtn = document.querySelector('#reset');
 let playAgaianBtn = document.querySelector('#play-again');
 
 let turnO = true;
+let count = 0;
 
 const winPatterns = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -23,6 +24,15 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
+        count++;
+
+        let isWinner = checkWinner();
+
+        if (count === 9 && !isWinner) {
+            msg.innerText = 'It\'s a draw!';
+            msgContainer.classList.remove("hide");
+        }
+
 
         checkWinner();
     })
@@ -43,6 +53,7 @@ const disabledBoxes = () => {
 
 const resetGame = () => {
     turnO = true;
+    count = 0;
     enableBoxes();
     msgContainer.classList.add("hide");
     
