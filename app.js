@@ -1,6 +1,8 @@
 let boxes = document.querySelectorAll('.box');
 let msg = document.querySelector('#msg');
 let msgContainer = document.querySelector('.msg-container');
+let resetBtn = document.querySelector('#reset');
+let playAgaianBtn = document.querySelector('#play-again');
 
 let turnO = true;
 
@@ -26,8 +28,28 @@ boxes.forEach((box) => {
     })
 });
 
+const enableBoxes = () => {
+    boxes.forEach((box) => {
+        box.innerText = "";
+        box.disabled = false;
+    });
+}
+
+const disabledBoxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = true;
+    });
+}
+
+const resetGame = () => {
+    turnO = true;
+    enableBoxes();
+    msgContainer.classList.add("hide");
+    
+}
+
 const showWinner = (winner) => {
-    msg.innerText = 'Congratulations!, Player ' + winner + ' wins!';
+    msg.innerText = 'Congratulations! Player ' + winner + ' wins!';
     msgContainer.classList.remove("hide");
 }
 
@@ -45,4 +67,7 @@ const checkWinner = () => {
         }
     }
 }
+
+playAgaianBtn.addEventListener('click', resetGame);
+resetBtn.addEventListener('click', resetGame);
 

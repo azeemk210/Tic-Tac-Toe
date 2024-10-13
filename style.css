@@ -40,6 +40,40 @@ body {
     color: hsl(186, 67%, 11%);
 }
 
+#play-again {
+    font-size: 2rem;
+    background-color: hsl(186, 67%, 11%);
+    color: #D9DD92;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+#reset {
+    font-size: 2rem;
+    background-color: hsl(186, 67%, 11%);
+    color: #D9DD92;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+#msg {
+    font-size: 3rem;
+    color: hsl(186, 67%, 11%);
+    margin-top: 2rem;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+    flex-direction: column;
+}
 .hide {
     display: none;
 }
